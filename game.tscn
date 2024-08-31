@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cltgrllk5x33u"]
+
+[ext_resource type="PackedScene" uid="uid://c5133v7na1iw7" path="res://bal.tscn" id="1_ljdyb"]
+[ext_resource type="PackedScene" uid="uid://cgayb56602023" path="res://spawner.tscn" id="2_5g33c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_614lj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1094, 0)
+rotation = 1.5708
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+rotation = 3.14159
+scale = Vector2(61.72, 1)
+shape = SubResource("WorldBoundaryShape2D_614lj")
+
+[node name="Spawner" parent="." instance=ExtResource("2_5g33c")]
+position = Vector2(0, 96)
+
+[node name="Bal" parent="." instance=ExtResource("1_ljdyb")]
+position = Vector2(368, 500)
+scale = Vector2(0.25, 0.25)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0.000183105, 0)
+rotation = -1.5708
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+rotation = 3.14159
+scale = Vector2(61.72, 1)
+shape = SubResource("WorldBoundaryShape2D_614lj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(532, 1927)
+rotation = 3.14159
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 3.14159
+scale = Vector2(61.72, 1)
+shape = SubResource("WorldBoundaryShape2D_614lj")

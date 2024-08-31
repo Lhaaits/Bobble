@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5133v7na1iw7"]
+
+[ext_resource type="Texture2D" uid="uid://cxwjiyyv8548f" path="res://blueberry.png" id="1_4ldvw"]
+[ext_resource type="PhysicsMaterial" uid="uid://lagpxe65odmg" path="res://bal_physics.tres" id="1_5kr5d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lr2dx"]
+radius = 8.66909
+
+[node name="Bal" type="Node2D"]
+position = Vector2(0, 38)
+scale = Vector2(0.82, 0.82)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_5kr5d")
+sleeping = true
+freeze_mode = 1
+linear_damp_mode = 1
+angular_damp_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_4ldvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 24)
+scale = Vector2(13.4812, 12.0444)
+shape = SubResource("CircleShape2D_lr2dx")
+debug_color = Color(0.27451, 0.619608, 0.376471, 0.952941)
